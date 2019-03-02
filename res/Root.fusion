@@ -1,0 +1,33 @@
+prototype(Neos.Fusion:Attributes) {
+    @class = 'Prgfx.Fusion.FusionObjects.AttributesImplementation'
+    @ignoreProperties = ${[]}
+    @allowEmpty = true
+}
+
+prototype(Neos.Fusion:Tag) {
+    @class = 'Prgfx.Fusion.FusionObjects.TagImplementation'
+    tagName = 'div'
+    attributes = Neos.Fusion:Attributes
+    selfClosingTag = false
+    omitClosingTag = false
+}
+
+prototype(Neos.Fusion:Array) {
+    @class = 'Prgfx.Fusion.FusionObjects.ArrayImplementation'
+}
+
+prototype(Neos.Fusion:DataStructure).@class = 'Prgfx.Fusion.FusionObjects.DataStructureImplementation'
+prototype(Neos.Fusion:RawArray) < prototype(Neos.Fusion:DataStructure)
+
+prototype(Neos.Fusion:Map) {
+    @class = 'Prgfx.Fusion.FusionObjects.MapImplementation'
+    itemName = 'item'
+}
+
+prototype(Neos.Fusion:Loop) {
+    @class = 'Prgfx.Fusion.FusionObjects.LoopImplementation'
+    itemName = 'item'
+}
+
+prototype(Neos.Fusion:GlobalCacheIdentifiers) < prototype(Neos.Fusion:RawArray) {
+}
